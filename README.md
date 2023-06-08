@@ -24,6 +24,7 @@ A better way to do this would be to leverage [GitHub Actions](https://github.com
 
 The `./.github/CODEOWNERS` CODEOWNERS file to define individuals or teams that are responsible for code in a repository
 
+
 ## References
 
 - [Next JS / React](https://nextjs.org/learn/basics/create-nextjs-app)
