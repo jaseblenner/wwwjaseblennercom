@@ -16,7 +16,7 @@ export default function Home() {
       </Head>
       <main className={`${styles.main} ${inter.className}`}>
         <div className={styles.description}>
-          <p> hosted <span> @ </span>
+          <p> source code<span>&#10240;@ </span>
             <code className={styles.code}>
               <a href="https://www.github.com/jaseblenner/wwwjaseblennercom">github</a>
               </code>
@@ -30,7 +30,7 @@ export default function Home() {
               height={24}
               priority
             />
-            <span> Melbourne, AU</span>
+            <span>Melbourne, AU</span>
           </div>
         </div>
 
