@@ -1,8 +1,8 @@
 # define our dns zone
 locals {
   dns_zone_name = "jaseblenner.com"
-  github_owner  = "jaseblenner"        # name of our github account/org which our pages project codebase belongs to
-  github_repo   = "wwwjaseblenner.com" # name ofthe github repo which our pages project codebase belongs to
+  github_owner  = "jaseblenner"       # name of our github account/org which our pages project codebase belongs to
+  github_repo   = "wwwjaseblennercom" # name ofthe github repo which our cloudflare pages project codebase belongs to
 }
 
 # retrieve info from the (existing) dns zone in cloudflare
@@ -10,7 +10,7 @@ data "cloudflare_zone" "zone" {
   name = local.dns_zone_name
 }
 
-# Create Cloudflare Pages project to manage our
+# Create Cloudflare Pages project
 resource "cloudflare_pages_project" "wwwjaseblennercom" {
   account_id        = var.cloudflare_master_account_id
   name              = var.project_name
@@ -19,14 +19,17 @@ resource "cloudflare_pages_project" "wwwjaseblennercom" {
   source {
     type = "github"
     config {
-      owner                         = local.github_owner
-      repo_name                     = local.github_repo
-      production_branch             = "main"
-      pr_comments_enabled           = true
-      deployments_enabled           = true
-      production_deployment_enabled = false # we dont auto deploy to our production domain (ie. jaseblenner.com)
-      preview_deployment_setting    = "custom"
-      preview_branch_excludes       = ["main"]
+      owner               = local.github_owner
+      repo_name           = local.github_repo
+      production_branch   = "main"
+      pr_comments_enabled = true
+      deployments_enabled = true
+      # we dont auto deploy to our production domain (ie. jaseblenner.com)
+      production_deployment_enabled = false
+      # we deploy to our dev domain from all branches except "main"
+      preview_deployment_setting = "custom"
+      preview_branch_excludes    = ["main"]
+      preview_branch_includes    = ["*"]
     }
   }
 
@@ -77,6 +80,7 @@ resource "cloudflare_record" "wwwjaseblennercom" {
   proxied = true
 }
 
+# Redirect http to https
 resource "cloudflare_ruleset" "wwwjaseblennercom" {
   zone_id = data.cloudflare_zone.zone.zone_id
   name    = "www_redirect_to_https"
