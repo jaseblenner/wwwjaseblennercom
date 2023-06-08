@@ -16,7 +16,7 @@ Any changes made to **any** other branch will trigger a development deployment a
 
 Our infrastructure code is housed in the root (top level) of the repository. Any changes to this codebase on the `main` branch will trigger a speculative terraform plan against the Terraform Cloud workspace of the same name. Note that all changes to main must be merged by way of an approved PR.
 
-Local basic pre-commit and linting checks have been configured in the `.pre-commit-config.yaml` file
+Local basic pre-commit and linting checks (mainly for terraform) have been configured in the `.pre-commit-config.yaml` file
 
 
 ## References
