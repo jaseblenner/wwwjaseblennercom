@@ -13,7 +13,12 @@ The services deployed and managed by this repo (eg. in GitHub, Terraform Cloud a
 
 This repo is manages both the infrastructure and application codebases for the [www.jaseblenner.com](https://www.jaseblenner.com) landing page
 
-Our (web) application Next.JS/React codebase is housed in the `./app/` folder - any changes to this codebase on the `main` branch will trigger a production deployment against the Cloudflare Pages Project named `wwwjaseblennercom` - for this reason, the `main` branch has branch protection enabled. In addition to this, Cloudflare automatically invokes deployment checks prior to a PR being marked available to merge. Note that Cloudflare Pages in conjunction with our custom domain provides transparent management and automation of SSL/TLS certificates removing a large chunk of management overhead if managing certs ourselves.
+Our (web) application Next.JS/React codebase is housed in the `./app/` folder - any changes to this codebase on the `main` branch will trigger a production deployment against the Cloudflare Pages Project named `wwwjaseblennercom` - for this reason, the `main` branch has branch protection enabled. 
+
+In addition to this, Cloudflare automatically invokes deployment checks prior to a PR being marked available to merge. 
+
+
+*Note*: Cloudflare Pages in conjunction with our custom domain provides transparent management and automation of SSL/TLS certificates removing a large chunk of management overhead if managing certs ourselves.
 
 Any changes made to **any** other branch will trigger a development deployment against the same Cloudflare Pages Project
 
@@ -22,7 +27,7 @@ Our infrastructure code is housed in the root (top level) of the repository. Any
 Local basic pre-commit and linting checks (mainly for terraform) have been configured in the `.pre-commit-config.yaml` file - note that there is a dependency to have the required pre-commit linters and dependencies installed locally for these to run successfully. Example only.
 A better way to do this would be to leverage [GitHub Actions](https://github.com/features/actions) to perform these.
 
-The `./.github/CODEOWNERS` CODEOWNERS file is used to define individuals or teams that are responsible for code in a repository
+The `./.github/CODEOWNERS` file is used to define individuals or teams that are responsible for code in a repository.
 
 
 ## References
