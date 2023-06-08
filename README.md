@@ -2,7 +2,9 @@
 
 ## Intention
 
-This repo is intended to provide a simple example of how app and serverless infrastructure codebases can be housed together and managed from a single repository.
+This repo is used as an example/guide when facilitating educational workshops.
+
+This repo is intended to showcase a simple example of how app and serverless infrastructure codebases can be housed together and managed from a single repository.
 
 The services deployed and managed by this repo incur no cost - they are free to run.
 
