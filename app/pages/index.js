@@ -1,9 +1,9 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import styles from '@/styles/Home.module.css'
+import Head from "next/head";
+import Image from "next/image";
+import { Inter } from "next/font/google";
+import styles from "@/styles/Home.module.css";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
@@ -16,27 +16,42 @@ export default function Home() {
       </Head>
       <main className={`${styles.main} ${inter.className}`}>
         <div className={styles.description}>
-          <p> source code<span>&#10240;@ </span>
-            <code className={styles.code}>
-              <a href="https://www.github.com/jaseblenner/wwwjaseblennercom">github</a>
-              </code>
-              </p>
-              <div>
+          <p>
+            {" "}
             <Image
-              src="/images/location.svg"
-              alt="location"
-              className={styles.locationLogo}
+              src="/images/github-mark.svg"
+              alt="github"
+              className={styles.smallLogo}
               width={24}
               height={24}
               priority
             />
-            <span>Melbourne, AU</span>
+            <code className={styles.code}>
+              <a href="https://www.github.com/jaseblenner/wwwjaseblennercom">
+                {" "}
+                view source code
+              </a>
+            </code>
+          </p>
+          <div>
+            <Image
+              src="/images/location.svg"
+              alt="location"
+              className={styles.smallLogo}
+              width={24}
+              height={24}
+              priority
+            />
+            <code className={styles.code}>
+                {" "}
+                Melbourne, AU
+            </code>
           </div>
         </div>
 
         <div className={styles.center}>
           <Image
-            className={styles.logo}
+            className={styles.mainLogo}
             src="/images/jaseblennertext.svg"
             alt="jaseblenner text logo"
             width={180}
@@ -55,9 +70,7 @@ export default function Home() {
             <h2>
               email <span>-&gt;</span>
             </h2>
-            <p>
-              email me
-            </p>
+            <p>email me</p>
           </a>
 
           <a
@@ -69,12 +82,10 @@ export default function Home() {
             <h2>
               linkedin <span>-&gt;</span>
             </h2>
-            <p>
-              contact me on linkedin
-            </p>
+            <p>contact me on linkedin</p>
           </a>
         </div>
       </main>
     </>
-  )
+  );
 }

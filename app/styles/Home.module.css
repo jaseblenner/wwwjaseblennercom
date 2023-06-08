@@ -106,7 +106,11 @@
   transform: translateZ(0);
 }
 
-.logo {
+.smallLogo {
+  position: relative;
+  vertical-align: middle;  
+}
+.mainLogo {
   position: relative;
 }
 /* Enable hover only on non-touch devices */
