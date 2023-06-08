@@ -11,7 +11,7 @@ The services deployed and managed by this repo (eg. in GitHub, Terraform Cloud a
 
 ## Overview
 
-This repo is manages both the infrastructure and application codebases for the [www.jaseblenner.com](www.jaseblenner.com) landing page
+This repo is manages both the infrastructure and application codebases for the [www.jaseblenner.com](https://www.jaseblenner.com) landing page
 
 Our (web) application Next.JS/React codebase is housed in the `./app/` folder - any changes to this codebase on the `main` branch will trigger a production deployment against the Cloudflare Pages Project named `wwwjaseblennercom` - for this reason, the `main` branch has branch protection enabled. In addition to this, Cloudflare automatically invokes deployment checks prior to a PR being marked available to merge. Note that Cloudflare Pages in conjunction with our custom domain provides transparent management and automation of SSL/TLS certificates removing a large chunk of management overhead if managing certs ourselves.
 
