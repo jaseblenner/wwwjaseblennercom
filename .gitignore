@@ -36,3 +36,9 @@ override.tf.json
 .terraformrc
 terraform.rc
 terraform.exe
+
+## Node / NextJS
+**/.next/*
+**/node_modules/*
+**/app/out/*
+**/app/build/*
